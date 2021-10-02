@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/styles'
-import { Button, Container, TextField, Typography } from '@mui/material'
+import { Button, Container, FormControl, FormLabel, Radio, TextField, Typography, FormControlLabel, RadioGroup } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useState } from 'react'
 
 const useStyles = makeStyles({
     textField: {
@@ -12,10 +12,38 @@ const useStyles = makeStyles({
 
 function Creact() {
     const classes = useStyles()
+    const [title, setTitle] = useState('')
+    const [details, setDetails] = useState('')
+    const [titleError, setTitleError] = useState(false)
+    const [detailsError, setDetailsError] = useState(false)
+    const [skill, setSkill] = useState('')
+    const [skillError, setSkillError] = useState(false)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        setTitleError(false)
+        setDetailsError(false)
+        setSkillError(false)
+
+        if (title === '') {
+            setTitleError(true)
+        }
+        if (details === '') {
+            setDetailsError(true)
+        }
+        if (skill === '') {
+            setSkillError(true)
+        }
+
+        if (title && details && skill) {
+            console.log(title, details, skill);
+        }
+    }
     return (
         <Container>
             <Typography variant="h4" color="textSecondary">Create a new note</Typography>
-            <Box component="form" noValidate autoComplete="off">
+            <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <div className={classes.textField}>
                     <TextField
                         variant="outlined"
@@ -23,6 +51,8 @@ function Creact() {
                         required
                         fullWidth
                         margin="normal"
+                        onChange={(e) => setTitle(e.target.value)}
+                        error={titleError}
                     />
                     <TextField
                         variant="outlined"
@@ -32,7 +62,20 @@ function Creact() {
                         rows={4}
                         fullWidth
                         margin="normal"
+                        onChange={(e) => setDetails(e.target.value)}
+                        error={detailsError}
                     />
+                </div>
+                <div className={classes.textField}>
+                    <FormControl error={skillError}>
+                        <FormLabel>Choose your Skill</FormLabel>
+                        <RadioGroup aria-label="skills" onChange={(e)=>setSkill(e.target.value)}>
+                            <FormControlLabel value="Java" label="Java" control={<Radio />} />
+                            <FormControlLabel value="JavaScript" label="JavaScript" control={<Radio />} />
+                            <FormControlLabel value="React JS" label="React JS" control={<Radio />} />
+                            <FormControlLabel value="Node JS" label="Node JS" control={<Radio />} />
+                        </RadioGroup>
+                    </FormControl>
                 </div>
                 <div>
                     <Button type="submit" variant="contained" >Submit</Button>
