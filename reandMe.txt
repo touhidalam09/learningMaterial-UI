@@ -1,0 +1,57 @@
+Material UI learning
+
+1.setUp
+Create React JS
+React Router Dom npm install
+MUI npm Install 
+MUI icon Material npm install 
+MUI Style npm Install
+
+2.MUI icon For Button
+
+3.Custom Theme
+Customize MUI with your theme. You can change the colors, the typography and much more
+Theme configuration variables
+.palette for coloring
+.typography
+.spacing
+.breakpoints
+.zIndex
+.transitions
+.components
+Custom variables
+const theme = createTheme({....
+<ThemeProvider theme={theme}>
+  <CustomCheckbox defaultChecked />
+</ThemeProvider>
+
+
+4.Text Field
+onChange, Validation, Custome CSS,variant..
+
+5.Radio Buttons
+FormControl,> FormLabel,> RadioGroup,> FromControlLabel
+FormControl: classNames,errors,
+RadioGroup: onChange
+
+
+6.JSON Server for CURD operation
+Create a folder in root directory, inside the folder create a json file
+Install : npm install -g json-server
+Start JSON Server: json-server --watch db.json 
+For DataShow: useEffect > fetch, useState
+
+7.Grid 
+rowSpacing, columnSpecing, item
+
+8.Card
+card > cardHeader: action, title, subheader..
+
+9.Layout >Drawer >List
+Create a layouts file and wrap the all route Componet , layouts pros {children}, 
+App bar, Side Bar, Children
+Side bar Drawer, List design
+
+10.App Bar 
+Box > AppBar sx:{{}}> Toolbar > Typo... sx:{{flexgrow:1}
+Childern wrap with Box sx > Toolbar for vertical space > {children props}
