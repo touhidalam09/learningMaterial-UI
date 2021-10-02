@@ -1,7 +1,8 @@
+import React, { useState } from 'react'
+import { Box } from '@mui/system'
 import { makeStyles } from '@material-ui/styles'
 import { Button, Container, FormControl, FormLabel, Radio, TextField, Typography, FormControlLabel, RadioGroup } from '@mui/material'
-import { Box } from '@mui/system'
-import React, { useState } from 'react'
+import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles({
     textField: {
@@ -69,7 +70,7 @@ function Creact() {
                 <div className={classes.textField}>
                     <FormControl error={skillError}>
                         <FormLabel>Choose your Skill</FormLabel>
-                        <RadioGroup aria-label="skills" onChange={(e)=>setSkill(e.target.value)}>
+                        <RadioGroup aria-label="skills" onChange={(e) => setSkill(e.target.value)}>
                             <FormControlLabel value="Java" label="Java" control={<Radio />} />
                             <FormControlLabel value="JavaScript" label="JavaScript" control={<Radio />} />
                             <FormControlLabel value="React JS" label="React JS" control={<Radio />} />
@@ -78,7 +79,7 @@ function Creact() {
                     </FormControl>
                 </div>
                 <div>
-                    <Button type="submit" variant="contained" >Submit</Button>
+                    <Button type="submit" variant="contained" endIcon={<SendIcon />} >Submit</Button>
                 </div>
             </Box>
         </Container>
