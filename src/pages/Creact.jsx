@@ -47,7 +47,7 @@ function Creact() {
                         "Content-type": "application/json"
                     },
                     body: JSON.stringify({title, details, skill})
-                }).then(history.push("/"))
+                }).then(() => history.push("/"))
         }
     }
     return (
