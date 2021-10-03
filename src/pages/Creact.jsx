@@ -51,7 +51,7 @@ function Creact() {
         }
     }
     return (
-        <Container>
+        <Container maxWidth="xl">
             <Typography variant="h4" color="textSecondary">Create a new note</Typography>
             <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <div className={classes.textField}>
