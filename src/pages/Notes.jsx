@@ -1,14 +1,11 @@
-import { Container, Grid } from '@mui/material'
+import {  Container, Grid, } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import NoteCard from '../components/NoteCard'
 
 
-
-
-
 function Notes() {
     const [notes, setNotes] = useState([])
-    
+
 
     useEffect(() => {
         fetch('http://localhost:8000/notes')

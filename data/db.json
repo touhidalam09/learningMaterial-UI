@@ -1,12 +1,6 @@
 {
   "notes": [
     {
-      "title": "Dignissimos sit pro",
-      "details": "Proident dolor labo",
-      "skill": "Node JS",
-      "id": 1
-    },
-    {
       "title": "Nisi atque delectus",
       "details": "Nostrum dolor volupt",
       "skill": "Java",
@@ -19,15 +13,9 @@
       "id": 3
     },
     {
-      "title": "Pariatur Cum ipsam ",
-      "details": "Dolor consequatur se",
+      "title": "Placeat voluptatem",
+      "details": "Laudantium ad dolor",
       "skill": "React JS",
-      "id": 4
-    },
-    {
-      "title": "In quia aut voluptas",
-      "details": "Exercitation deserun",
-      "skill": "JavaScript",
       "id": 5
     }
   ]
