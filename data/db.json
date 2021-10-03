@@ -29,6 +29,12 @@
       "details": "Culpa duis ipsum ne",
       "skill": "React JS",
       "id": 12
+    },
+    {
+      "title": "Ad quam consequatur",
+      "details": "Illo inventore ut mi",
+      "skill": "Java",
+      "id": 13
     }
   ]
 }
