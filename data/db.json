@@ -1,16 +1,34 @@
 {
   "notes": [
     {
-      "title": "Test 1",
-      "details": "testing json server",
-      "skill": "JavaSrcipt",
-      "id": 1
-    },
-    {
       "title": "Quos esse tempor el",
       "details": "Consequatur nesciun",
       "skill": "Node JS",
       "id": 2
+    },
+    {
+      "title": "Eveniet laborum ex ",
+      "details": "Quo sit ullam nesciu",
+      "skill": "JavaScript",
+      "id": 3
+    },
+    {
+      "title": "Quae et officiis duc",
+      "details": "Enim officia culpa ",
+      "skill": "Java",
+      "id": 4
+    },
+    {
+      "title": "Saepe iure ipsa lab",
+      "details": "Rerum tempore totam",
+      "skill": "Node JS",
+      "id": 5
+    },
+    {
+      "title": "Vero distinctio Eve",
+      "details": "Dolore tempor labori",
+      "skill": "React JS",
+      "id": 6
     }
   ]
 }
