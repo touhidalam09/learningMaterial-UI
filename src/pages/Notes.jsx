@@ -1,11 +1,27 @@
-import {  Container, Grid, } from '@mui/material'
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
+import {
+    Container,
+    Grid,
+    IconButton,
+    Snackbar,
+} from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import NoteCard from '../components/NoteCard'
-
+import MuiAlert from '@mui/material/Alert';
 
 function Notes() {
-    const [notes, setNotes] = useState([])
+    // Snackbar Start
+    const [open, setOpen] = useState(false)
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return
+        }
+        setOpen(false)
+    }
+    // Snackbar END
+
+    const [notes, setNotes] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:8000/notes')
@@ -20,6 +36,8 @@ function Notes() {
 
         const newNote = notes.filter(note => note.id !== id)
         setNotes(newNote)
+        // toast or alert show when delete button clicked
+        setOpen(true)
     }
 
 
@@ -28,12 +46,32 @@ function Notes() {
             <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {
                     notes.map(note => (
-                        <Grid item xs={12} sm={6} md={3} key={note.id}>
+                        <Grid item xs={12} md={6} lg={3} key={note.id}>
                             <NoteCard note={note} handleDeleteCard={handleDeleteCard} />
                         </Grid>
                     ))
                 }
             </Grid>
+            <Snackbar
+                anchorOrigin={{
+                    horizontal: 'right',
+                    vertical: 'bottom'
+                }}
+                open={open}
+                autoHideDuration={1000}
+                onClose={handleClose}
+                action={
+                    <IconButton onClick={handleClose}>
+                        <CloseRoundedIcon />
+                    </IconButton>
+                }
+            >
+                <MuiAlert
+                    onClose={handleClose}
+                    severity="warning">
+                    delete note!!
+                </MuiAlert>
+            </Snackbar>
         </Container>
     )
 }
