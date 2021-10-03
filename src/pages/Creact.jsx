@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Box } from '@mui/system'
-import { makeStyles } from '@material-ui/styles'
 import { Button, Container, FormControl, FormLabel, Radio, TextField, Typography, FormControlLabel, RadioGroup } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send';
+import { makeStyles } from '@mui/styles';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles({
     textField: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles({
 })
 
 function Creact() {
+    const history = useHistory()
     const classes = useStyles()
     const [title, setTitle] = useState('')
     const [details, setDetails] = useState('')
@@ -38,7 +40,14 @@ function Creact() {
         }
 
         if (title && details && skill) {
-            console.log(title, details, skill);
+            fetch('http://localhost:8000/notes',
+                {
+                    method: "POST",
+                    headers:{
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({title, details, skill})
+                }).then(history.push("/"))
         }
     }
     return (

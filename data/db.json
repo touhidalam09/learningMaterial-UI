@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "title": "Test 1",
+      "details": "testing json server",
+      "skill": "JavaSrcipt",
+      "id": 1
+    },
+    {
+      "title": "Quos esse tempor el",
+      "details": "Consequatur nesciun",
+      "skill": "Node JS",
+      "id": 2
+    }
+  ]
+}
