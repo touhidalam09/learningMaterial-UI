@@ -43,10 +43,10 @@ function Creact() {
             fetch('http://localhost:8000/notes',
                 {
                     method: "POST",
-                    headers:{
+                    headers: {
                         "Content-type": "application/json"
                     },
-                    body: JSON.stringify({title, details, skill})
+                    body: JSON.stringify({ title, details, skill })
                 }).then(() => history.push("/"))
         }
     }
