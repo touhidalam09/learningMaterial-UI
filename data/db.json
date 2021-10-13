@@ -7,40 +7,10 @@
       "id": 1
     },
     {
-      "title": "Fugiat quis ea conse",
-      "details": "Placeat nihil commo",
-      "skill": "JavaScript",
-      "id": 2
-    },
-    {
-      "title": "Dolore rerum aut del",
-      "details": "Est magna dolorem ea",
-      "skill": "Node JS",
-      "id": 4
-    },
-    {
-      "title": "Sint obcaecati repre",
-      "details": "Incididunt et hic lo",
-      "skill": "JavaScript",
-      "id": 8
-    },
-    {
       "title": "Ut ea commodo volupt",
       "details": "Iste voluptatibus ma",
       "skill": "JavaScript",
       "id": 9
-    },
-    {
-      "title": "Esse quia minima ve",
-      "details": "Asperiores deserunt ",
-      "skill": "React JS",
-      "id": 10
-    },
-    {
-      "title": "Exercitation eos mag",
-      "details": "Non doloribus volupt",
-      "skill": "React JS",
-      "id": 11
     },
     {
       "title": "Et blanditiis in in ",
@@ -49,10 +19,22 @@
       "id": 12
     },
     {
-      "title": "DEmo",
-      "details": "gdfg df gfd gdf fg fg dfg fdgdfg",
-      "skill": "Java",
+      "title": "Ut commodo reiciendi",
+      "details": "Do voluptatem proide",
+      "skill": "JavaScript",
       "id": 13
+    },
+    {
+      "title": "Commodi consequatur",
+      "details": "Molestias assumenda ",
+      "skill": "React JS",
+      "id": 14
+    },
+    {
+      "title": "Soluta similique nih",
+      "details": "Dolorem autem iusto ",
+      "skill": "Java",
+      "id": 15
     }
   ]
 }
