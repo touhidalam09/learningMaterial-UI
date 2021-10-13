@@ -17,6 +17,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import { useHistory, useLocation } from 'react-router';
 import { Box } from '@mui/system';
 import { PhotoCamera } from '@mui/icons-material';
+import BookIcon from '@mui/icons-material/Book';
 
 const drawerWidth = "240px"
 
@@ -37,9 +38,14 @@ function Layouts({ children }) {
             path: "/create"
         },
         {
-            text: "Album",
+            text: "Album Site",
             icon: <PhotoCamera />,
             path: "/album"
+        },
+        {
+            text: "Blog Site",
+            icon: <BookIcon />,
+            path: "/blog"
         }
     ]
     return (

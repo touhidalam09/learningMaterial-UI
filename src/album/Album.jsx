@@ -43,7 +43,7 @@ function Album() {
                                 <CardMedia
                                     className={classes.cardMedia}
                                     title="Image Title"
-                                    image="https://source.upslash.com/random"
+                                    image="https://source.unsplash.com/random"
                                 />
                                 <CardContent className={classes.cardContainer}>
                                     <Typography variant="h5" gutterBottom>

@@ -5,14 +5,16 @@ import Create from './pages/Creact'
 import Layouts from './components/Layouts';
 import Album from './album/Album';
 import { CssBaseline } from '@mui/material';
+import Blog from './Blog/Blog';
 
 function App() {
   return (
     <>
-    <CssBaseline />
+      <CssBaseline />
       <Router>
         <Layouts>
           <Switch>
+            {/* If New Route Add or remove Than also Add/remove from menuItem var in Layouts file */}
             <Route exact path="/">
               <Notes />
             </Route>
@@ -20,7 +22,10 @@ function App() {
               <Create />
             </Route>
             <Route path="/album">
-                <Album />
+              <Album />
+            </Route>
+            <Route path="/blog">
+              <Blog />
             </Route>
           </Switch>
         </Layouts>
