@@ -1,18 +1,71 @@
-import React from 'react';
-import { Badge, Divider, IconButton, Toolbar, Typography } from '@mui/material'
+import React, { useState } from 'react';
+import { Badge, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import useStyles from './blogStyle'
 
 const Header = () => {
+
     const classes = useStyles();
+
+    const [state, setState] = useState(false);
+
+    const menuItem = [
+        {
+            text: "Notes",
+            icon: <MenuIcon />,
+            path: "/"
+        },
+        {
+            text: "Create",
+            icon: <MenuIcon />,
+            path: "/create"
+        },
+        {
+            text: "Album Site",
+            icon: <MenuIcon />,
+            path: "/album"
+        },
+        {
+            text: "Blog Site",
+            icon: <MenuIcon />,
+            path: "/blog"
+        }
+    ]
+
+    const toggleDrawer = ( open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+        setState(open);
+        console.log("on clicked");
+    };
+
     return (
         <>
             <Toolbar>
-                <IconButton color="inherit">
+                <IconButton color="inherit" onClick={toggleDrawer(true)}>
                     <MenuIcon />
                 </IconButton>
+                <Drawer
+                    anchor="left"
+                    open={state}
+                    onClose={toggleDrawer(false)}
+                >
+                    <List>
+                        {
+                            menuItem.map(item => (
+                                <ListItem button key={item.text} >
+                                    <ListItemIcon> {item.icon}</ListItemIcon>
+                                    <ListItemText primary={item.text} />
+                                </ListItem>
+                            )
+                            )
+                        }
+                    </List>
+                </Drawer>
+
                 <Typography
                     className={classes.brandTitle}
                     variant="h6">
