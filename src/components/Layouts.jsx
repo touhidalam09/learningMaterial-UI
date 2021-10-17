@@ -18,6 +18,7 @@ import { useHistory, useLocation } from 'react-router';
 import { Box } from '@mui/system';
 import { PhotoCamera } from '@mui/icons-material';
 import BookIcon from '@mui/icons-material/Book';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 const drawerWidth = "240px"
 
@@ -46,6 +47,11 @@ function Layouts({ children }) {
             text: "Blog Site",
             icon: <BookIcon />,
             path: "/blog"
+        },
+        {
+            text: "Employee Site",
+            icon: <AccountBalanceIcon />,
+            path: "/employee"
         }
     ]
     return (

@@ -6,6 +6,7 @@ import Layouts from './components/Layouts';
 import Album from './album/Album';
 import { CssBaseline } from '@mui/material';
 import Blog from './Blog/Blog';
+import IndexEmployee from './employee';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/blog">
               <Blog />
+            </Route>
+            <Route path="/employee">
+              <IndexEmployee />
             </Route>
           </Switch>
         </Layouts>

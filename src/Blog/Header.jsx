@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import useStyles from './blogStyle'
+const drawerWidth = "240px";
 
 const Header = () => {
 
@@ -49,6 +50,14 @@ const Header = () => {
                     <MenuIcon />
                 </IconButton>
                 <Drawer
+                sx={{
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: drawerWidth,
+                        boxSizing: 'border-box',
+                    },
+                }}
                     anchor="left"
                     open={state}
                     onClose={toggleDrawer(false)}
