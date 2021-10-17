@@ -1,12 +1,27 @@
-import { Container } from '@mui/material';
+import { Container, Paper } from '@mui/material';
 import React from 'react';
+import EmployeeForm from './EmployeeForm';
+import useStyles from './empStyle';
 import Header from './Header';
+import PageHeader from './PageHeader';
+
+
 
 const IndexEmployee = () => {
+const classes = useStyles()
+
     return (
-        <Container>
+        <div className={classes.rootBg}>
             <Header />
-        </Container>
+            <PageHeader />
+            <Container>
+                <Paper 
+                elevation={0}
+                className={classes.employeePaper}>
+                <EmployeeForm />
+                </Paper>
+            </Container>
+        </div>
     );
 };
 
