@@ -1,7 +1,9 @@
-import { FormControl, FormControlLabel, FormLabel, Grid, InputLabel, Radio, RadioGroup, Select, TextField } from '@mui/material';
+import { FormControl, FormControlLabel, FormLabel, Grid, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useStyles from './empStyle';
+import * as departmentList from './depatment';
+import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 
 const initValues = {
     id: 0,
@@ -92,13 +94,28 @@ function EmployeeForm() {
                             <InputLabel id="department">Department</InputLabel>
                             <Select
                                 labelId="department"
+                                name="departmentId"
                                 value={values.departmentId}
                                 label="Department"
                                 onChange={handleChange}
                             >
+                                {
+                                    departmentList.getDepartmentList().map((item) => (
+                                        <MenuItem value={item.id} key={item.id}>
+                                            {item.title}
+                                        </MenuItem>
+                                    ))
+                                }
 
                             </Select>
                         </FormControl>
+                        <DesktopDatePicker
+                            label="Hire Date"
+                            inputFormat="MM/dd/yyyy"
+                            value={values.hireDate}
+                            onChange={handleChange}
+                            renderInput={(params) => <TextField {...params} />}
+                        />
                     </Grid>
 
                 </Grid>
