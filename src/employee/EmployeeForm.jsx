@@ -3,7 +3,8 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useStyles from './empStyle';
 import * as departmentList from './depatment';
-import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+import { DesktopDatePicker, LocalizationProvider } from '@mui/lab';
+// import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 
 const initValues = {
     id: 0,
@@ -109,15 +110,8 @@ function EmployeeForm() {
 
                             </Select>
                         </FormControl>
-                        <DesktopDatePicker
-                            label="Hire Date"
-                            inputFormat="MM/dd/yyyy"
-                            value={values.hireDate}
-                            onChange={handleChange}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
+                        
                     </Grid>
-
                 </Grid>
             </Box>
         </>
